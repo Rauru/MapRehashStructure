@@ -39,10 +39,12 @@ void test()
        && map.exists("bca")
        && map.exists("cab")
        )
+
    {
        cout<<"Pass"<<endl;
    }else
    {
+
        cout<<"Fail"<<endl;
    }
 

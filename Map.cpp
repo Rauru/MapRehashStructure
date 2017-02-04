@@ -50,9 +50,45 @@ int Map::get(string key)
 
 bool Map::exists(string key)
 {
-    return false;
+    int rerun = 0;
+    int pos;
+    bool exist = false;
+    do
+    {
+        pos = funcionHash(key,rerun);
+        rerun++;
+        if(array_key[pos] ==key)
+            {
+                return true;
+            }
+            if(pos== 1000)
+                {
+                    return false;
+                }
+
+    }while(array_key[pos]!=key);
+
+
+    return exist;
 }
 
 void Map::remove(string key)
 {
+    int rerun = 0;
+    int pos;
+    bool exist = false;
+    do
+    {
+        pos = funcionHash(key,rerun);
+        rerun++;
+        if(array_key[pos]==key)
+            {
+                array_key[pos]="";
+                array_value[pos]=0;
+                break;
+            }
+
+    }while(array_key[pos]!=key);
+
+
 }
